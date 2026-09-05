@@ -1,0 +1,10 @@
+Use case: ads-marketing
+Asset type: one ARMORA branded metadata social preview card, landscape 1536x1024.
+Primary request: a cohesive, refined editorial brand card for a pocket fragrance keyring.
+Scene/backdrop: warm paper #F5F1E8 with very subtle real paper texture and beautiful natural sunlight.
+Composition/framing: balanced generous negative space, left half for exquisite legible typography, right half for one photoreal miniature pocket perfume atomizer. Large elegant headline on left split into "Carry a" on one line and "Place." below. "Place." must be italic serif. Small clean letterspaced uppercase wordmark above headline. Small supporting copy toward bottom left.
+Subject: on right, a small short cylindrical 5ml transparent glass atomizer in a snug moss green #486557 matte silicone sleeve, silver metal top, and a clearly visible attached silver split keyring. Accurate tangible small travel-sized product, softly rounded cylinder, realistic glass highlights, fine matte silicone, polished metal details. Strong yet subtle directional sunlight with refined soft-edged shadow.
+Style/medium: photoreal product photography integrated with premium editorial typography; restrained and polished art direction.
+Color palette: warm paper #F5F1E8, deep midnight #0D2B3E typography, moss #486557 sleeve, a restrained tiny amber accent, silver metal.
+Text (verbatim): "ARMORA"; "Carry a Place."; "Pocket fragrance. Everyday companion."
+Constraints: render precisely those three text strings, no additional words. Exact wordmark spelling A R M O R A, exact punctuation in supporting copy. No URL, no fake claims, no logos of other brands, no decorative pseudo-text or watermarks. Product must have a visible attached silver keyring. Keep all text comfortably within image margins and clearly legible at social-card size.
