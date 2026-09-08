@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 @source '../../components/ui';
 @theme inline {
   --color-primary: var(--color-midnight);
@@ -142,6 +142,12 @@ nav a:hover,
 .button-dark:hover {
   background: var(--color-primary-hover);
 }
+
+.logo {
+  width: 9rem;
+  height: auto;
+}
+
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -403,7 +409,7 @@ h3 {
   align-items: center;
   white-space: nowrap;
 }
-.language-button[data-slot='button'] {
+.language-button[data-slot="button"] {
   min-width: 30px;
   min-height: 44px;
   padding: 0 5px;
@@ -416,25 +422,25 @@ h3 {
   font-weight: 450;
   box-shadow: none;
 }
-.language-button.active[data-slot='button'] {
+.language-button.active[data-slot="button"] {
   font-weight: 800;
   color: var(--color-text);
 }
-.language-button:hover[data-slot='button'] {
+.language-button:hover[data-slot="button"] {
   opacity: 0.6;
 }
 .language-divider {
   font-size: 10px;
   opacity: 0.35;
 }
-.menu-toggle[data-slot='button'] {
+.menu-toggle[data-slot="button"] {
   display: none;
   min-width: 44px;
   min-height: 44px;
   padding: 5px;
   color: var(--color-primary);
 }
-.icon-button[data-slot='button'] {
+.icon-button[data-slot="button"] {
   width: 44px;
   height: 44px;
   padding: 10px;
@@ -442,16 +448,16 @@ h3 {
   color: var(--color-primary);
   background: color-mix(in srgb, var(--color-paper) 90%, transparent);
 }
-.icon-button[data-slot='button'] svg {
+.icon-button[data-slot="button"] svg {
   width: 23px;
   height: 23px;
 }
-[data-slot='dialog-overlay'] {
+[data-slot="dialog-overlay"] {
   background: color-mix(in srgb, var(--color-primary) 38%, transparent);
   backdrop-filter: blur(8px);
   z-index: 60;
 }
-.mobile-menu[data-slot='dialog-content'] {
+.mobile-menu[data-slot="dialog-content"] {
   max-width: none;
   width: 100%;
   top: 0;
@@ -652,7 +658,7 @@ h3 {
   border-radius: var(--radius-pill);
   padding: 4px 9px;
 }
-.scent-explore[data-slot='button'] {
+.scent-explore[data-slot="button"] {
   display: flex;
   margin-top: 25px;
   border-top: 1px solid var(--color-line);
@@ -666,7 +672,7 @@ h3 {
   color: var(--color-primary);
   font-size: 11px;
 }
-.scent-explore[data-slot='button'] svg {
+.scent-explore[data-slot="button"] svg {
   width: 18px;
   height: 18px;
 }
@@ -684,7 +690,7 @@ h3 {
   color: var(--color-muted);
   text-align: right;
 }
-.scent-modal[data-slot='dialog-content'] {
+.scent-modal[data-slot="dialog-content"] {
   display: grid;
   grid-template-columns: 0.95fr 1fr;
   gap: 0;
@@ -725,13 +731,13 @@ h3 {
 .modal-copy {
   padding: 55px 35px 35px;
 }
-.scent-modal-title[data-slot='dialog-title'] {
+.scent-modal-title[data-slot="dialog-title"] {
   font-size: 40px;
   line-height: 1.15;
   margin-top: 16px;
   letter-spacing: -0.045em;
 }
-.scent-modal-story[data-slot='dialog-description'] {
+.scent-modal-story[data-slot="dialog-description"] {
   font-size: 14px;
   line-height: 1.8;
   color: var(--color-primary);
@@ -930,7 +936,7 @@ h3 {
   gap: 21px;
 }
 .story-sequence li::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 36px;
   left: 65%;
@@ -1076,7 +1082,7 @@ h3 {
   gap: 10px;
   margin-top: 28px;
 }
-.mood-option[data-slot='button'] {
+.mood-option[data-slot="button"] {
   justify-content: flex-start;
   min-height: 52px;
   padding: 14px 15px;
@@ -1088,10 +1094,10 @@ h3 {
   font-size: 12px;
   transition: background var(--duration-fast);
 }
-.mood-option:hover[data-slot='button'] {
+.mood-option:hover[data-slot="button"] {
   background: color-mix(in srgb, var(--color-paper) 56%, transparent);
 }
-.mood-option.selected[data-slot='button'] {
+.mood-option.selected[data-slot="button"] {
   background: var(--color-primary);
   color: var(--color-paper);
   border-color: var(--color-primary);
@@ -1161,7 +1167,7 @@ h3 {
   border-radius: 50%;
   margin: 16px auto 5px;
 }
-.finder-explore[data-slot='button'] {
+.finder-explore[data-slot="button"] {
   min-height: 44px;
   height: auto;
   padding: 10px 15px;
@@ -1239,8 +1245,8 @@ h3 {
   font-weight: 400;
   color: var(--color-muted);
 }
-.field [data-slot='input'],
-.field [data-slot='textarea'],
+.field [data-slot="input"],
+.field [data-slot="textarea"],
 .field select {
   height: auto;
   min-height: 48px;
@@ -1254,27 +1260,27 @@ h3 {
   line-height: 1.5;
   width: 100%;
 }
-.field [data-slot='input']:focus-visible,
-.field [data-slot='textarea']:focus-visible,
+.field [data-slot="input"]:focus-visible,
+.field [data-slot="textarea"]:focus-visible,
 .field select:focus-visible {
   outline: 2px solid var(--color-tech-blue);
   outline-offset: 2px;
   border-color: var(--color-tech-blue);
 }
-.field [data-slot='native-select-wrapper'] {
+.field [data-slot="native-select-wrapper"] {
   width: 100%;
 }
 .field select {
   padding-right: 34px;
   text-overflow: ellipsis;
 }
-.field [data-slot='textarea'] {
+.field [data-slot="textarea"] {
   min-height: 100px;
   resize: vertical;
   max-height: 250px;
   field-sizing: fixed;
 }
-.field [aria-invalid='true'] {
+.field [aria-invalid="true"] {
   border-color: var(--color-error);
 }
 .field-error {
@@ -1287,7 +1293,7 @@ h3 {
   line-height: 1.75;
   margin-top: -1px;
 }
-.form-submit[data-slot='button'] {
+.form-submit[data-slot="button"] {
   width: 100%;
   height: auto;
   min-height: 51px;
@@ -1525,7 +1531,7 @@ h3 {
   .nav-inner .desktop-nav {
     display: none;
   }
-  .menu-toggle[data-slot='button'] {
+  .menu-toggle[data-slot="button"] {
     display: inline-flex;
   }
   .nav-actions {
@@ -1728,7 +1734,7 @@ h3 {
   .mood-tags span {
     font-size: 10px;
   }
-  .scent-explore[data-slot='button'] {
+  .scent-explore[data-slot="button"] {
     margin-top: 20px;
     min-height: 49px;
     font-size: 12px;
@@ -1743,7 +1749,7 @@ h3 {
     text-align: left;
     font-size: 10px;
   }
-  .scent-modal[data-slot='dialog-content'] {
+  .scent-modal[data-slot="dialog-content"] {
     display: block;
     max-height: 90dvh;
     width: calc(100% - 28px);
@@ -1759,10 +1765,10 @@ h3 {
   .modal-copy {
     padding: 27px 24px 28px;
   }
-  .scent-modal-title[data-slot='dialog-title'] {
+  .scent-modal-title[data-slot="dialog-title"] {
     font-size: 36px;
   }
-  .scent-modal-story[data-slot='dialog-description'] {
+  .scent-modal-story[data-slot="dialog-description"] {
     margin-block: 15px 25px;
   }
   .modal-copy > .button {
@@ -1934,7 +1940,7 @@ h3 {
   .mood-options {
     margin-top: 24px;
   }
-  .mood-option[data-slot='button'] {
+  .mood-option[data-slot="button"] {
     font-size: 12px;
     gap: 8px;
     padding: 14px 12px;
@@ -1971,8 +1977,8 @@ h3 {
   .field label {
     font-size: 12px;
   }
-  .field [data-slot='input'],
-  .field [data-slot='textarea'],
+  .field [data-slot="input"],
+  .field [data-slot="textarea"],
   .field select {
     font-size: 16px;
     min-height: 51px;
@@ -1986,7 +1992,7 @@ h3 {
   .privacy-note {
     font-size: 11px;
   }
-  .form-submit[data-slot='button'] {
+  .form-submit[data-slot="button"] {
     font-size: 13px;
   }
   .form-area {
@@ -2108,7 +2114,7 @@ h3 {
 .language-switch {
   margin: 0;
 }
-.clear-local-button[data-slot='button'] {
+.clear-local-button[data-slot="button"] {
   margin-top: 9px;
   height: auto;
   min-height: 40px;

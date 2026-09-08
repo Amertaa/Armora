@@ -1,3 +1,5 @@
+import logo from '../assets/products/logo.png';
+
 export function Brand({ className = '' }: { className?: string }) {
   return (
     <a
@@ -5,7 +7,7 @@ export function Brand({ className = '' }: { className?: string }) {
       className={`wordmark ${className}`}
       aria-label="ARMORA — Home"
     >
-      ARMORA<span aria-hidden="true">™</span>
+      <img src={logo} alt="ARMORA" className="logo" />
     </a>
   );
 }
