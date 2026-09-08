@@ -1,4 +1,10 @@
-import { useEffect, useRef, useState, type MouseEvent } from 'react';
+import {
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type MouseEvent,
+} from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -12,6 +18,19 @@ import { Brand } from './Brand';
 import { LanguageSwitch } from './LanguageSwitch';
 import type { Copy } from '../data/translations';
 import type { Language } from '../hooks/useLanguage';
+const MOBILE_NAV_QUERY = '(max-width: 1000px)';
+function subscribeToMobileViewport(notify: () => void) {
+  const query = window.matchMedia(MOBILE_NAV_QUERY);
+  query.addEventListener('change', notify);
+  return () => query.removeEventListener('change', notify);
+}
+function isMobileViewport() {
+  return window.matchMedia(MOBILE_NAV_QUERY).matches;
+}
+function serverMobileViewport() {
+  return false;
+}
+
 export function Navbar({
   copy,
   language,
@@ -22,6 +41,12 @@ export function Navbar({
   onLanguage: (lang: Language) => void;
 }) {
   const [open, setOpen] = useState(false);
+  const isMobile = useSyncExternalStore(
+    subscribeToMobileViewport,
+    isMobileViewport,
+    serverMobileViewport,
+  );
+  const skipFocusRestore = useRef(false);
   const pendingSection = useRef<string | null>(null);
   const scrollFrame = useRef<number | null>(null);
 
@@ -129,6 +154,7 @@ export function Navbar({
     if (open) {
       // Wait for the mobile dialog to release its scroll lock.
       pendingSection.current = id;
+      skipFocusRestore.current = true;
       setOpen(false);
     } else {
       scrollToSection(id);
@@ -136,9 +162,12 @@ export function Navbar({
   }
 
   useEffect(() => {
-    const query = matchMedia('(min-width: 1001px)');
+    const query = matchMedia(MOBILE_NAV_QUERY);
     const close = () => {
-      if (query.matches) setOpen(false);
+      if (!query.matches) {
+        pendingSection.current = null;
+        setOpen(false);
+      }
     };
     query.addEventListener('change', close);
     return () => query.removeEventListener('change', close);
@@ -180,8 +209,11 @@ export function Navbar({
               <ArrowUpRight size={15} />
             </a>
             <Dialog
-              open={open}
-              onOpenChange={setOpen}
+              open={open && isMobile}
+              onOpenChange={(nextOpen) => {
+                if (nextOpen) skipFocusRestore.current = false;
+                setOpen(nextOpen && isMobileViewport());
+              }}
               onOpenChangeComplete={(isOpen) => {
                 if (!isOpen && pendingSection.current) {
                   const id = pendingSection.current;
@@ -202,9 +234,9 @@ export function Navbar({
                 <Menu size={23} />
               </DialogTrigger>
               <DialogContent
-                className="mobile-menu"
+                className="mobile-menu top-0 right-0 left-0 max-w-none translate-x-0 translate-y-0 sm:max-w-none"
                 showCloseButton={false}
-                finalFocus={() => (pendingSection.current ? false : true)}
+                finalFocus={() => !skipFocusRestore.current}
               >
                 <div className="mobile-menu-top">
                   <DialogTitle>
